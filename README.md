@@ -9,4 +9,4 @@
 <p align="center">-----------------------------------------</p>
 <p align="center">Nome: Eduardo Carlos dos Santos RA:2301040</p>
 <p align="center">-----------------------------------------</p>
-<p align="center">Nome:Pedro Henrique  das Silva Santos RA:2300164</p>
+<p align="center">Nome:Pedro Henrique da Silva Santos RA:2300164</p>
