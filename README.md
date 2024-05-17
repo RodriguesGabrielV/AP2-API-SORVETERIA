@@ -8,3 +8,5 @@
 <p align="center">Nome: Gabriel Vieira Rodrigues RA:2300907</p>
 <p align="center">-----------------------------------------</p>
 <p align="center">Nome: Eduardo Carlos dos Santos RA:2301040</p>
+<p align="center">-----------------------------------------</p>
+<p align="center">Nome:Pedro Henrique  das Silva Santos RA:2300164</p>
