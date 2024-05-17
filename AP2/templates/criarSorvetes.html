@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Sorvete</title>
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins" ;
+    font-weight: bold;
+  }
+
+  div{
+   width: 100vw;
+   height: 100vh;
+   background-color: darkgrey;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+  }
+
+  form{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+  }
+
+  fieldset{ 
+    width: 60%;
+    height: 60%;
+    border-radius: 70% 30% 76% 24% / 50% 47% 53% 50%;
+    border-color: transparent;
+    text-align: center;
+    background-color: rgb(0, 18, 100);
+  }
+
+  h1{
+    font-size: 4.3vw;
+  }
+
+  .categoria{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+  }
+
+  button{
+    height: 5%;
+    width: 15%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  cursor: pointer;
+  margin-top: 2.5%;
+}
+
+button{
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+  
+button:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+input{
+  background-color: transparent;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width:20%;
+    color:transparent;
+    color: #fff;
+  border-bottom: solid rgb(255, 255, 255) 1.5px;
+  text-align: center;
+  margin-top: 0.3%;
+}
+
+select{
+  background-color: transparent;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width:20%;
+    color: gray;
+  text-align: center;
+}
+
+</style>
+
+<body>
+  <div class="container">
+    <h1>Adicionar sorvete</h1>
+  <fieldset>
+      <form action="{{ url_for('sorveteria.create_sorvete') }}" method="POST">
+        <label for="sabor">Sabor:</label>
+        <input type="text" name="Sabor" id="sabor" required>
+        <br>
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" name="Preco" id="preco" required>
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="Quantidade" id="quantidade" required>
+        <br>
+        <div class="categoria">
+        <label for="categoria">Categoria:</label>
+        <select name="Categoria_Id" id="categoria" required>
+          {% for categoria in categorias %}
+            <option value="{{ categoria['Id'] }}">{{ categoria['Categoria'] }}</option>
+          {% endfor %}
+        </select>   
+        </div>
+      </form>
+  </fieldset>
+  <button type="submit">Adicionar</button>
+  </div>
+</body>
+
+</html>
